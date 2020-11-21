@@ -1,0 +1,98 @@
+{
+    "objects": [
+        {
+            "type": "img",
+            "size": [500, 500],
+            "position": [-400, 0],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [-50, -210],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [140, -20],
+            "crop": [
+            ],
+            "rotate": 225,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [330, -210],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [800, 800],
+            "position": [330, -210],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [140, 370],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [330, 560],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        },
+        {
+            "type": "img",
+            "size": [250, 250],
+            "position": [520, 750],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        }
+        ,
+        {
+            "type": "img",
+            "size": [800, 800],
+            "position": [-440, 570],
+            "crop": [
+            ],
+            "rotate": 45,
+            "auto_resize": false,
+            "corners_radius": 30
+        }
+        ],
+    "size": [1080, 1080],
+    "color": [2000, 2000, 2000, 2000],
+    "watermark": true
+}
