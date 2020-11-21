@@ -122,7 +122,7 @@ class Template:
         if self.watermark:
             draw = ImageDraw.Draw(self.main_sheet)
             draw.multiline_text((10, self.main_sheet.height - 75),"Made by: SimpleCollage\n"
-                                                                   "Author: @ic_it"
+                                                                   "Author: @ic_it\n"
                                                                    "Project page: https://github.com/drogi17/SimpleCollage", 
                                                                    (0, 0, 0), font=font)
 
