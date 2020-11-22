@@ -31,6 +31,7 @@ class TemplateImg:
     rotate: int
     auto_resize: bool
     corners_radius: int
+    auto_crop: bool
 
 
 class Template:
@@ -88,6 +89,17 @@ class Template:
             if self.objects[img_num].auto_resize:
                 self.images_objects[img_num].thumbnail(size, Image.ANTIALIAS)
             else:
+                if self.objects[img_num].auto_crop:
+                    resize_side = self.images_objects[img_num].size[0] > self.images_objects[img_num].size[1]
+                    not_resize = self.images_objects[img_num].size[0] == self.images_objects[img_num].size[1]
+                    if resize_side:
+                        resizing = self.images_objects[img_num].size[1] * size[1] // size[0]
+                        crop_x = (self.images_objects[img_num].size[0] - resizing) // 2
+                        self.images_objects[img_num] = self.images_objects[img_num].crop((crop_x, 0, resizing + crop_x, self.images_objects[img_num].size[1]))
+                    elif not not_resize:
+                        resizing = self.images_objects[img_num].size[0] * size[1] // size[0]
+                        crop_y = (self.images_objects[img_num].size[1] - resizing) // 2
+                        self.images_objects[img_num] = self.images_objects[img_num].crop((0, crop_y, self.images_objects[img_num].size[0], crop_y + resizing))
                 self.images_objects[img_num] = self.images_objects[img_num].resize(size, Image.ANTIALIAS)
             img_num += 1
     
@@ -128,8 +140,8 @@ class Template:
 
 
     def prepare_all_images(self):
-        self.add_corners_to_iamges()
         self.resize_images()
+        self.add_corners_to_iamges()
         self.rotate_images()
         self.crop_images()
 
@@ -164,9 +176,16 @@ image3 = Image.open("img2.jpg").convert("RGBA")
 image4 = Image.open("img3.jpg").convert("RGBA")
 image5 = Image.open("img4.jpg").convert("RGBA")
 image6 = Image.open("img5.jpg").convert("RGBA")
+image7 = Image.open("img6.jpg").convert("RGBA")
+image8 = Image.open("img7.jpg").convert("RGBA")
+image9 = Image.open("img8.jpg").convert("RGBA")
+image10 = Image.open("img9.jpg").convert("RGBA")
+image11 = Image.open("img10.jpg").convert("RGBA")
+image12 = Image.open("img11.jpg").convert("RGBA")
+image13 = Image.open("img12.jpg").convert("RGBA")
 
 template.add_objects(image1, image2, image3, image4, image5,
-                     image6, image1, image2, image3, image4, image5, image6, image1)
+                     image6, image7, image8, image9, image10, image11, image12, image13)
 template.prepare_all_images()
 # template._save_temp_imgs()
 template.paste_imgaes()
